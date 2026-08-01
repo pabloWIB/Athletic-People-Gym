@@ -1,0 +1,65 @@
+/* ==========================================================================
+   layout.css — page shell, backdrop and centring
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Backdrop
+
+   The original animated `background-position` on <body>, which repaints the
+   whole viewport on every frame. Here the same slow drift is produced by a
+   fixed pseudo-element moved with `transform`, which the compositor handles
+   on the GPU. The visual result is the same; the cost is not.
+   -------------------------------------------------------------------------- */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../img/content/low-poly-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Overscan, so the drift never exposes an edge */
+  transform: scale(1.08);
+  animation: backdrop-drift 10s linear infinite alternate;
+  will-change: transform;
+}
+
+@keyframes backdrop-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+
+  to {
+    transform: translate3d(2.2%, -2.6%, 0) scale(1.08);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Stage — centres a single card in the viewport at any size
+   -------------------------------------------------------------------------- */
+
+.stage {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-4) var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .stage {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .stage {
+    padding: var(--space-6) var(--space-5);
+  }
+}

@@ -1,0 +1,273 @@
+/* ==========================================================================
+   components.css — card, brand lockup, form controls, feedback
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Card
+   -------------------------------------------------------------------------- */
+
+.card {
+  width: 100%;
+  max-width: 25rem;
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* --------------------------------------------------------------------------
+   Brand lockup
+   -------------------------------------------------------------------------- */
+
+.brand {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.brand__mark {
+  width: 80px;
+  height: 80px;
+}
+
+.brand__kicker {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.brand__name {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Auth block
+   -------------------------------------------------------------------------- */
+
+.auth {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.auth__heading {
+  display: grid;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.auth__subtitle {
+  margin-inline: auto;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.auth__form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.auth__note {
+  padding-top: var(--space-3);
+  margin-inline: auto;
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--color-muted);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   Form field
+   -------------------------------------------------------------------------- */
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.field__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.field__input {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) 0.75rem;
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.field__input::placeholder {
+  color: var(--color-muted);
+}
+
+.field__input:hover {
+  border-color: var(--color-border-hover);
+}
+
+.field__input:focus-visible {
+  border-color: var(--color-border-focus);
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.field__input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.field__input[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px rgb(180 35 24 / 15%);
+}
+
+.field__error {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-danger);
+}
+
+.field__error[hidden] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Button
+   -------------------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-surface);
+  background-color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base),
+    border-color var(--transition-base), opacity var(--transition-base);
+}
+
+.button--block {
+  width: 100%;
+}
+
+.button:hover {
+  background-color: var(--color-ink-soft);
+  border-color: var(--color-ink-soft);
+}
+
+.button:active {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button:disabled:hover {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+/* Secondary — used on the 404 page */
+.button--quiet {
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.button--quiet:hover {
+  background-color: var(--color-surface-sunken);
+  border-color: var(--color-border-hover);
+}
+
+.button--quiet:active {
+  background-color: var(--color-surface-sunken);
+  border-color: var(--color-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Status message
+   -------------------------------------------------------------------------- */
+
+.status {
+  padding: var(--space-2) 0.75rem;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
+.status[hidden] {
+  display: none;
+}
+
+.status--info {
+  color: var(--color-success);
+  background-color: var(--color-success-surface);
+  border: 1px solid rgb(33 110 78 / 25%);
+}
+
+.status--error {
+  color: var(--color-danger);
+  background-color: var(--color-danger-surface);
+  border: 1px solid rgb(180 35 24 / 25%);
+}
+
+/* --------------------------------------------------------------------------
+   Error page
+   -------------------------------------------------------------------------- */
+
+.error-page {
+  display: grid;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.error-page__code {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-muted);
+}
+
+.error-page__text {
+  margin-inline: auto;
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.error-page__action {
+  margin-top: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .card {
+    padding: var(--space-6) var(--space-5) var(--space-5);
+  }
+
+  .brand__name {
+    font-size: var(--text-2xl);
+  }
+}

@@ -1,114 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head lang="es">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Athletic People</title>
-	<link rel="website icon" href="logo.jpg">
-	<style>
-		html, body{
-  margin: 0; width: 100%;
-}
-a, button {
-  cursor: pointer;
-}
-body{
-  display: grid;
-  place-items: center;
-  background-image: url(low.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: moves 10s infinite alternate linear;
-}
-button{
-  border: 0;
-  border-radius: 17px;
-  width: %;
-  background-color: gray;
-  color: white;
-  font-weight: 600;
-  height: 24px;
-}
-img{
-  cursor: pointer;
-  width: 80px;
-  height: 80px;
-  margin-bottom: -24px;
-}
-.sesion-div{
-  border-radius: 20px;
-  background-color: white;
-  padding: 20px 40px 25px;
-  text-align: center;
-}
-.sesion-form{
-  text-align: center;
-  display: grid;
-  place-items: center;
-  gap: 6px;
-  width: 100%;
-}
-.sesion-form input[type="email"]{
-  cursor: pointer;
-  border-radius: 10px;
-    transition: 0.2s;
-  border: 1px black linear;
-  padding: 5px 7px;
-  text-align: center;
-}
-input:focus[type="email"]{
-  transition: 0.2s;
-  transform: scale(1.1);
-}
-input:focus[type="password"]{
-  transition: 0.2s;
-  transform: scale(1.1);
-  border: 0px none transparent;
-}
-.sesion-form input[type="password"]{
-  width: 100%;
-  border: 1px linen black;
-  transition: 0.2s;
-  cursor: pointer;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px black linear;
-  padding: 5px 7px;
-}
-.sesion-form input[type="submit"]{
-  width: 100%;
-  max-width: 90px;
-  cursor: pointer;
-  border-radius: 10px;
-  border: 0px none transparent;
-  padding: 5px 7px;
-  transition: 0.3s;
-}
-input[type="submit"]:hover{
-  transform: scale(1.1);
-  transition: 0.3s;
-  background-color: darkgrey;
-}
-@keyframes moves{
-  100%{background-position: 15%  30%;}
-}
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Built by Pablo Nieto Pérez — wib.digital
+         Need changes or a new build? https://www.fiverr.com/pablonietop -->
+    <meta name="author" content="Pablo Nieto Pérez — wib.digital">
+    <link rel="author" href="https://www.fiverr.com/pablonietop">
 
-</style>
-</head>
-<body>
-	<div class="sesion-div">
-		<figure><img src="logo.jpg"></figure>
-		<hgroup>
-			<h1>GYM</h1>
-			<h2>Athletic People</h2>
-			<h3>Iniciar Sesión</h3>
-		</hgroup>
-		<form class="sesion-form" action="get">
-			<input type="email" name="email" placeholder=" Ingresa tu Correo">
-			<input type="password" name="password" placeholder=" Ingresa tu Contraseña">
-			<input type="submit"><br>
-			<a href="#">¿Olvidaste tu contraseña?</a>
-		</form>
-	</div>
-</body> 
+    <title>Iniciar sesión | Athletic People Gym — Acceso socios</title>
+    <meta name="description" content="Pantalla de acceso al área de socios de Athletic People Gym. Entra con tu correo y tu contraseña. Demo de interfaz responsive, sin servidor de autenticación.">
+    <link rel="canonical" href="https://athleticpeoplegym.wib.digital/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Iniciar sesión | Athletic People Gym">
+    <meta property="og:description" content="Pantalla de acceso al área de socios de Athletic People Gym. Entra con tu correo y tu contraseña. Demo de interfaz responsive, sin servidor de autenticación.">
+    <meta property="og:url" content="https://athleticpeoplegym.wib.digital/">
+    <meta property="og:image" content="https://athleticpeoplegym.wib.digital/assets/img/content/og-cover.png">
+
+    <meta name="theme-color" content="#0d0d0d">
+    <link rel="icon" href="assets/img/logo/favicon.png" sizes="32x32" type="image/png">
+
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+    <script defer src="assets/js/modules/auth-form.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pablo Nieto Pérez",
+      "url": "https://wib.digital",
+      "jobTitle": "Web Designer and Developer",
+      "sameAs": [
+        "https://www.fiverr.com/pablonietop",
+        "https://www.linkedin.com/in/pablo-nieto-perez-39a530292"
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <main class="stage">
+      <div class="card">
+        <header class="brand">
+          <img class="brand__mark" src="assets/img/logo/athletic-people-logo.webp" alt="" width="80" height="80">
+          <p class="brand__kicker">Gym</p>
+          <p class="brand__name">Athletic People</p>
+        </header>
+
+        <section class="auth">
+          <div class="auth__heading">
+            <h1>Iniciar sesión</h1>
+            <p class="auth__subtitle">Entra al área de socios con tu correo y tu contraseña.</p>
+          </div>
+
+          <form class="auth__form" data-auth-form novalidate>
+            <div class="field">
+              <label class="field__label" for="email">Correo electrónico</label>
+              <input
+                class="field__input"
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                inputmode="email"
+                placeholder="nombre@dominio.com"
+                aria-describedby="email-error"
+                data-auth-field
+                required>
+              <span class="field__error" id="email-error" role="alert" hidden></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="password">Contraseña</label>
+              <input
+                class="field__input"
+                id="password"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                minlength="8"
+                aria-describedby="password-error"
+                data-auth-field
+                required>
+              <span class="field__error" id="password-error" role="alert" hidden></span>
+            </div>
+
+            <p class="status" data-auth-status role="status" hidden></p>
+
+            <button class="button button--block" type="submit" data-auth-submit>Entrar</button>
+          </form>
+
+          <p class="auth__note">Demo de interfaz. No hay servidor de autenticación conectado: lo que escribas se valida en tu navegador y no se envía a ningún sitio.</p>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,21 @@
+# Dependencies — none are committed; npx serve pulls its own
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor and OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local tooling caches
+.cache/
+.vercel/
