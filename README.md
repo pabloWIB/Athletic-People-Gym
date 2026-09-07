@@ -2,7 +2,7 @@
 
 Sign-in screen for a gym, built as a static site with no dependencies and no build step.
 
-[![Live demo](https://img.shields.io/badge/demo-athleticpeoplegym.wib.digital-2ea44f)](https://athleticpeoplegym.wib.digital)
+[![Live demo](https://img.shields.io/badge/demo-pablowib.github.io/Athletic-People-Gym-2ea44f)](https://pablowib.github.io/Athletic-People-Gym)
 [![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 ![First load](https://img.shields.io/badge/first%20load-30.5%20KB-blue)
@@ -100,7 +100,7 @@ Checked in Chrome against the local server and over `file://`:
 
 ## Deployment
 
-Static hosting, no build command and no output directory — upload the repository root as-is. Currently deployed on Vercel at [athleticpeoplegym.wib.digital](https://athleticpeoplegym.wib.digital).
+Static hosting, no build command and no output directory — upload the repository root as-is. Currently deployed on GitHub Pages at [pablowib.github.io/Athletic-People-Gym](https://pablowib.github.io/Athletic-People-Gym).
 
 If the host supports custom error pages, point 404 responses at `/404.html`.
 

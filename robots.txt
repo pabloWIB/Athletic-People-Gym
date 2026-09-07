@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://athleticpeoplegym.wib.digital/sitemap.xml
+Sitemap: https://pablowib.github.io/Athletic-People-Gym/sitemap.xml
